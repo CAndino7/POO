@@ -1,0 +1,78 @@
+class Expediente {
+    
+    private String fecha;
+    private int numeroExp;
+    private String narracion;
+    List <Delito> delitos = new ArrayList<>();
+    
+    public String getFecha()
+    {
+        return fecha;
+    }
+    
+    public int getNumeroExp()
+    {
+        return numeroExp;
+    }
+    
+    public String getNarracion()
+    {
+        return narracion;
+    }
+    
+    public void setFecha(String fecha) 
+    {
+        this.fecha = fecha;
+    }
+    
+     public void setNumeroExp(int numeroExp) 
+    {
+        this.numeroExp = numeroExp;
+    }
+    
+      public void setNarracion(String narracion) 
+    {
+        this.narracion = narracion;
+    }
+    
+  
+    
+    public Expediente()
+    {   
+        Random rand = new Random();
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("NUEVO EXPEDIENTE ingrese la fecha de creacion \n");
+        String x1 = scan.nextLine();
+        this.fecha = x1;
+        
+        int x2 = rand.nextInt(2000);
+        System.out.println(" El numero de expediente generado automaticamente es " + x2 + "\n");
+        this.numeroExp = x2;
+        
+        
+        System.out.println("Ingrese narracion \n");
+        String x3 = scan.nextLine();
+    }    
+        
+    public Expediente (int numExp)
+    {
+        this.numeroExp = numExp;   
+    }
+    
+    public void agregarDelito(Delito delito)
+    {
+        this.delitos.add(delito);    
+    }
+    
+    public void mostrarDelitos()
+    {
+        System.out.println("se mostraran todos los delitos bajo este expediente \n ");
+        for(Delito i : delitos)
+            {
+                System.out.println("delitos totales " + i.delitosTotales);
+            }
+        
+    }
+
+}

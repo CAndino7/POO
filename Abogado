@@ -1,0 +1,13 @@
+class Abogado extends Persona
+{
+    private String numAbogado;
+    public Abogado()
+    {   
+        super();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("ingrese el numero del abogado \n");
+        String x4 = scan.nextLine();
+        this.numAbogado = x4;
+        List<Expediente> expedientes = new ArrayList<>();
+    }
+}

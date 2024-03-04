@@ -1,0 +1,46 @@
+import java.util.* ;
+public class Main
+{
+    public static void main(String[] args) {
+        boolean continuar = true;
+        Expediente exp = new Expediente();
+        while(continuar)
+        {
+            System.out.println("1. Ingresar delito a expediente nuevo /n" + "2. Ingresar delito a expediente existente /n" + "3. ver delitos por numero de expediente /n");
+            Scanner scan = new Scanner(System.in);
+            int opt = scan.nextInt();
+            // System.out.println(opt);   
+            switch (opt) {
+            case 1:
+                System.out.println("Ingrese la informacion para crear un nuevo expediente /n");
+                Expediente exp2 = new Expediente();
+                Abogado abo = new Abogado();
+                Delito del = new Delito();
+                exp2.agregarDelito(del);
+                exp2.mostrarDelitos();
+                break;
+            case 2:
+                System.out.println("AGREGAR A EXPEDIENTE EXISTENTE Ingrese el numero de exp");
+                int numEXp = scan.nextInt();
+                if (numEXp == exp.getNumeroExp())
+                {
+                    exp.mostrarDelitos();
+                }
+                else
+                {
+                    System.out.println("no hay expediente con ese num de expediente");
+                }
+                break;
+            case 3:
+                System.out.println(" buscar todos los expedientes");
+                int numEXp2 = scan.nextInt();
+                if (numEXp2 == exp.getNumeroExp())
+                {
+                    exp.mostrarDelitos();
+                }
+                break;
+            }
+        }
+    }
+}
+

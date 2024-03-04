@@ -1,0 +1,48 @@
+class Delito
+{
+    
+    private Demandante dem;
+    //private Demandado dem1;
+    public  String delito1 = "\n Pirateria \n";
+    public  String delito2 = "Mineria Ilegal \n";
+    public  String delito3 = "Robo  \n";
+    public  String delito4 = "Homicidio \n";
+    public  String delito5 = "Estafa \n";
+    public  String delito6 = "Adulterio \n";
+    public  String delito7 = "Calumnia \n";
+    public  String delito8 = "Show de Marionetas \n";    
+        
+    public String delitosTotales = " ";
+        
+    public Delito()
+    {
+
+        Scanner scan = new Scanner(System.in);
+        System.out.println("SE AGREGARA NUEVO DELITO A EXPEDIENTE seleccione el delito cometido 1." + delito1 + "2." + delito2 + "3." + delito3 + "4." + delito4 + "/n"+ delito5 + "6." + delito6 +"7." + delito7 + " 8. "+ delito8 + "/n" );
+        int opt = scan.nextInt();
+        switch(opt)
+        {
+            case 1: delitosTotales = delitosTotales + delito1;
+                System.out.println(delitosTotales);
+                break;
+            case 2:  delitosTotales += delito2;
+                System.out.println(delitosTotales);
+                break;
+            case 3:  delitosTotales += delito3;
+                System.out.println(delitosTotales);
+                break;
+                case 4:  delitosTotales += delito4;
+                System.out.println(delitosTotales);
+                    break;
+                case 5:  delitosTotales += delito5;
+                System.out.println(delitosTotales);
+                    break;
+                case 6:  
+                    break;
+                case 7:  
+                    break;
+                case 8:  
+                    break;
+            } 
+        }
+}

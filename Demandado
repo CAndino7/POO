@@ -1,0 +1,13 @@
+class Demandado extends Persona
+{
+        
+    private String demanda;
+    public Demandado()
+    {
+        super();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("ingrese la narracion del demandante \n");
+        String x1 = scan.nextLine();
+        this.demanda = x1;
+    }    
+}

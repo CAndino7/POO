@@ -1,0 +1,24 @@
+class Persona
+{
+    private String nombre;
+    private String id;
+    private String domicilio;
+    
+    public Persona()
+    {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Se agergara un nueva persona, ingrese el nombre de la persona \n");
+        String x1 = scan.nextLine();
+        this.nombre = x1;
+        
+        System.out.println("ingrese la identidad de la persona \n");
+        String x2 = scan.nextLine();
+        this.id = x2;
+        
+        System.out.println("ingrese el domicilio de la persona \n");
+        String x3 = scan.nextLine();
+        this.nombre = x3;
+    }
+    
+}
