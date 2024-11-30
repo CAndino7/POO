@@ -1,0 +1,113 @@
+<!-- KEYS 
+    customCSS, title, NavB(utton), dashbard, content, customScripts
+-->
+
+{% extends "base.html" %}
+
+{% block customCSS %}
+  
+<style>
+    .image-card {
+        border: 1px solid #000000;
+        border-radius: 8px;
+        transition: transform 0.5s;
+        cursor: pointer;
+    }
+    .image-card:hover {
+        transform: scale(1.05);
+        box-shadow: 10 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    .form-check-input:checked + label {
+        background-color: #007bff;
+        color: rgb(0, 0, 0);
+        border-radius: 5px;
+    }
+    .form-check-label {
+        padding: 5px 10px;
+        border: 1px solid #007bff;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+</style>
+
+{% endblock %}
+
+
+{% block navB %}
+  LOG IN
+{% endblock %}
+ 
+{% block dashboard %}
+ 
+<div class="container mt-5">
+    <h2 class="text-center mb-4 ">Seleccione una opcion</h2>
+    <form id="imageForm">
+        <div class="row text-center">
+            <!-- Image 1 -->
+            <div class="col-md-6 mb-6 ">
+                <a href="https://registro.unah.edu.hn/" onclick="event.stopPropagation();">
+                    <img src="https://static.vecteezy.com/system/resources/previews/011/720/952/non_2x/simple-hand-cursor-free-png.png" alt="Image 1" class="img-fluid mb-2" style="max-width: 25%;">
+                </a>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="imageOptions" id="image1" value="image1">
+                    <label class="form-check-label" for="image1">Iniciar Sesion</label>
+                </div>
+            </div>
+
+            <!-- Image 2 -->
+            <div class="col-md-6 mb-6">
+                <a href="{% url 'new' %}" onclick="event.stopPropagation();">
+                    <img src="https://www.creativefabrica.com/wp-content/uploads/2022/08/14/Simple-Clipart-Fish-SVGPNGJPEGPDF-Graphics-36189143-1-580x387.jpg" alt="Image 2" class="img-fluid mb-2" style="max-width: 25%;">
+                </a>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="imageOptions" id="image2" value="image2">
+                    <label class="form-check-label" for="image2">Nuevo Usuario</label>
+                </div>
+            </div>
+
+
+        <button type="submit" class="btn btn-primary mt-3">Crear Nueva Cuenta</button>
+    </form>
+</div>
+  
+{% endblock %} 
+  
+
+
+{% block content %}
+  <p>CONTENT</p>
+{% endblock %}
+
+
+{% block customScript %}
+    
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.getElementById('imageForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        const selectedOption = document.querySelector('input[name="imageOptions"]:checked');
+        if (selectedOption) {
+            // Redirect based on the selected radio button value
+            switch (selectedOption.value) {
+                case 'image1':
+                    window.location.href = 'https://registro.unah.edu.hn/';
+                    break;
+                case 'image2':
+                    window.location.href = "{% url 'new' %}";
+                    break;
+                
+                default:
+                    break;
+            }
+        } else {
+            alert('Please select an image before submitting.');
+        }
+    });
+</script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+{% endblock %}
